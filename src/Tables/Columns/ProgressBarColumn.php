@@ -119,6 +119,7 @@ class ProgressBarColumn extends Column
         if (str_starts_with($color, '#')) {
             try {
                 $rgb = Hex::fromString($color)->toRgb();
+
                 return sprintf('rgb(%d, %d, %d)', $rgb->red(), $rgb->green(), $rgb->blue());
             } catch (\Exception $e) {
                 // If conversion fails, return the original color
@@ -222,4 +223,3 @@ class ProgressBarColumn extends Column
         };
     }
 }
-

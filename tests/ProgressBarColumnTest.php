@@ -42,7 +42,7 @@ it('can set max value', function () {
 
 it('can set max value with closure', function () {
     $model = TestModel::first();
-    
+
     $column = ProgressBarColumn::make('quantity')
         ->maxValue(fn ($record) => $record->max_quantity);
 
@@ -100,10 +100,9 @@ it('can set custom labels with closures', function () {
         ->and($column->getSuccessLabel(50))->toBe('Stock: 50');
 });
 
-
 it('calculates percentage correctly', function () {
     $model = TestModel::where('name', 'Product A')->first();
-    
+
     $column = ProgressBarColumn::make('stock')
         ->maxValue(100);
 
@@ -115,7 +114,7 @@ it('calculates percentage correctly', function () {
 
 it('handles danger state correctly', function () {
     $model = TestModel::where('stock', 0)->first();
-    
+
     $column = ProgressBarColumn::make('stock')
         ->maxValue(100)
         ->lowThreshold(10);
@@ -129,7 +128,7 @@ it('handles danger state correctly', function () {
 
 it('handles warning state correctly', function () {
     $model = TestModel::where('stock', 5)->first();
-    
+
     $column = ProgressBarColumn::make('stock')
         ->maxValue(100)
         ->lowThreshold(10);
@@ -143,7 +142,7 @@ it('handles warning state correctly', function () {
 
 it('handles success state correctly', function () {
     $model = TestModel::where('stock', 50)->first();
-    
+
     $column = ProgressBarColumn::make('stock')
         ->maxValue(100)
         ->lowThreshold(10);
@@ -157,7 +156,7 @@ it('handles success state correctly', function () {
 
 it('can use closures for dynamic max values', function () {
     $models = TestModel::all();
-    
+
     $column = ProgressBarColumn::make('quantity')
         ->maxValue(fn ($record) => $record->max_quantity);
 
@@ -169,7 +168,7 @@ it('can use closures for dynamic max values', function () {
 
 it('can use closures for dynamic thresholds', function () {
     $model = TestModel::first();
-    
+
     $column = ProgressBarColumn::make('quantity')
         ->maxValue(fn ($record) => $record->max_quantity)
         ->lowThreshold(fn ($record) => (int) ($record->max_quantity * 0.2));

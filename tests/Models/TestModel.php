@@ -10,4 +10,3 @@ class TestModel extends Model
 
     protected $table = 'test_models';
 }
-

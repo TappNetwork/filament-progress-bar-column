@@ -14,7 +14,7 @@ class TestResource extends Resource
 
     public static function table(Table $table): Table
     {
-            return $table
+        return $table
             ->columns([
                 Tables\Columns\TextColumn::make('id'),
                 Tables\Columns\TextColumn::make('name'),
@@ -33,4 +33,3 @@ class TestResource extends Resource
             ]);
     }
 }
-
