@@ -1,0 +1,21 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Match expression does not handle remaining value\\: string$#"
+			count: 2
+			path: src/Tables/Columns/ProgressBarColumn.php
+
+		-
+			message: "#^Call to an undefined method Pest\\\\PendingCalls\\\\TestCall\\:\\:expect\\(\\)\\.$#"
+			count: 1
+			path: tests/ArchTest.php
+
+		-
+			message: "#^Access to an undefined property Tapp\\\\FilamentProgressBarColumn\\\\Tests\\\\Models\\\\TestModel\\:\\:\\$max_quantity\\.$#"
+			count: 1
+			path: tests/ProgressBarColumnTest.php
+
+		-
+			message: "#^Access to an undefined property Tapp\\\\FilamentProgressBarColumn\\\\Tests\\\\Models\\\\TestModel\\:\\:\\$stock\\.$#"
+			count: 6
+			path: tests/ProgressBarColumnTest.php
