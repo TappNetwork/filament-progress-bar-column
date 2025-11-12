@@ -2,9 +2,8 @@
 
 namespace Tapp\FilamentProgressBarColumn\Tests\Fixtures;
 
-use Filament\Tables\Columns\TextColumn;
 use Filament\Resources\Resource;
-use Filament\Tables;
+use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Tapp\FilamentProgressBarColumn\Tables\Columns\ProgressBarColumn;
 use Tapp\FilamentProgressBarColumn\Tests\Models\TestModel;
