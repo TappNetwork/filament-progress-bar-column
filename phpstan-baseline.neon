@@ -19,8 +19,3 @@ parameters:
 			message: "#^Access to an undefined property Tapp\\\\FilamentProgressBarColumn\\\\Tests\\\\Models\\\\TestModel\\:\\:\\$stock\\.$#"
 			count: 6
 			path: tests/ProgressBarColumnTest.php
-
-		-
-			message: "#^Call to static method fromString\\(\\) on an unknown class Spatie\\\\Color\\\\Hex\\.$#"
-			count: 1
-			path: src/Tables/Columns/ProgressBarColumn.php
