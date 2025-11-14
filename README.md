@@ -24,9 +24,11 @@ You can install the package via Composer:
 composer require tapp/filament-progress-bar-column
 ```
 
-## Add the plugin in your TailwindCSS config file
+## Integrate plugin's Tailwind classes
 
-To enable the TailwindCSS plugin classes, add the plugin to `content` in your `tailwindcss.config.js` file:
+### Filament 3
+
+To include the TailwindCSS plugin classes, add the plugin to `content` in your `tailwindcss.config.js` file:
 
 ```js
 export default {
@@ -38,6 +40,14 @@ export default {
     ],
     // ...
 }
+```
+
+### Filament 4
+
+Filament recommends developers create a custom theme to better support plugin's additional Tailwind classes. After you have created your custom theme, add the Filament Progress Bar vendor path to your `theme.css` file, usually located in `resources/css/filament/admin/theme.css`:
+
+```css
+@source '../../../../vendor/tapp/filament-progress-bar-column';
 ```
 
 ## Usage
