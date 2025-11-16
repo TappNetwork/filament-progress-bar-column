@@ -2,6 +2,8 @@
 
 namespace Tapp\FilamentProgressBarColumn\Tables\Columns;
 
+use Closure;
+use Exception;
 use Filament\Tables\Columns\Column;
 use Spatie\Color\Hex;
 
@@ -9,21 +11,21 @@ class ProgressBarColumn extends Column
 {
     protected string $view = 'filament-progress-bar-column::columns.progress-bar-column';
 
-    protected int | \Closure | null $maxValue = null;
+    protected int | Closure | null $maxValue = null;
 
-    protected int | \Closure | null $lowThreshold = null;
+    protected int | Closure | null $lowThreshold = null;
 
-    protected string | array | \Closure | null $dangerColor = null;
+    protected string | array | Closure | null $dangerColor = null;
 
-    protected string | array | \Closure | null $warningColor = null;
+    protected string | array | Closure | null $warningColor = null;
 
-    protected string | array | \Closure | null $successColor = null;
+    protected string | array | Closure | null $successColor = null;
 
-    protected string | \Closure | null $dangerLabel = null;
+    protected string | Closure | null $dangerLabel = null;
 
-    protected string | \Closure | null $warningLabel = null;
+    protected string | Closure | null $warningLabel = null;
 
-    protected string | \Closure | null $successLabel = null;
+    protected string | Closure | null $successLabel = null;
 
     protected function setUp(): void
     {
@@ -40,7 +42,7 @@ class ProgressBarColumn extends Column
         $this->successLabel = fn ($state) => $state !== null ? "{$state} in stock" : '0 in stock';
     }
 
-    public function maxValue(int | \Closure $value): static
+    public function maxValue(int | Closure $value): static
     {
         $this->maxValue = $value;
 
@@ -52,7 +54,7 @@ class ProgressBarColumn extends Column
         return $this->evaluate($this->maxValue);
     }
 
-    public function lowThreshold(int | \Closure $value): static
+    public function lowThreshold(int | Closure $value): static
     {
         $this->lowThreshold = $value;
 
@@ -64,7 +66,7 @@ class ProgressBarColumn extends Column
         return $this->evaluate($this->lowThreshold);
     }
 
-    public function dangerColor(string | array | \Closure $color): static
+    public function dangerColor(string | array | Closure $color): static
     {
         $this->dangerColor = $color;
 
@@ -76,7 +78,7 @@ class ProgressBarColumn extends Column
         return $this->normalizeColor($this->evaluate($this->dangerColor));
     }
 
-    public function warningColor(string | array | \Closure $color): static
+    public function warningColor(string | array | Closure $color): static
     {
         $this->warningColor = $color;
 
@@ -88,7 +90,7 @@ class ProgressBarColumn extends Column
         return $this->normalizeColor($this->evaluate($this->warningColor));
     }
 
-    public function successColor(string | array | \Closure $color): static
+    public function successColor(string | array | Closure $color): static
     {
         $this->successColor = $color;
 
@@ -121,7 +123,7 @@ class ProgressBarColumn extends Column
                 $rgb = Hex::fromString($color)->toRgb();
 
                 return sprintf('rgb(%d, %d, %d)', $rgb->red(), $rgb->green(), $rgb->blue());
-            } catch (\Exception $e) {
+            } catch (Exception $e) {
                 // If conversion fails, return the original color
                 return $color;
             }
@@ -130,7 +132,7 @@ class ProgressBarColumn extends Column
         return $color;
     }
 
-    public function dangerLabel(string | \Closure $label): static
+    public function dangerLabel(string | Closure $label): static
     {
         $this->dangerLabel = $label;
 
@@ -144,7 +146,7 @@ class ProgressBarColumn extends Column
         ]);
     }
 
-    public function warningLabel(string | \Closure $label): static
+    public function warningLabel(string | Closure $label): static
     {
         $this->warningLabel = $label;
 
@@ -158,7 +160,7 @@ class ProgressBarColumn extends Column
         ]);
     }
 
-    public function successLabel(string | \Closure $label): static
+    public function successLabel(string | Closure $label): static
     {
         $this->successLabel = $label;
 

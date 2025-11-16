@@ -3,7 +3,7 @@
 namespace Tapp\FilamentProgressBarColumn\Tests\Fixtures;
 
 use Filament\Resources\Resource;
-use Filament\Tables;
+use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Tapp\FilamentProgressBarColumn\Tables\Columns\ProgressBarColumn;
 use Tapp\FilamentProgressBarColumn\Tests\Models\TestModel;
@@ -16,8 +16,8 @@ class TestResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('id'),
-                Tables\Columns\TextColumn::make('name'),
+                TextColumn::make('id'),
+                TextColumn::make('name'),
                 ProgressBarColumn::make('stock')
                     ->maxValue(100)
                     ->lowThreshold(10),
