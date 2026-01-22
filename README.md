@@ -42,7 +42,7 @@ export default {
 }
 ```
 
-### Filament 4
+### Filament 4 or 5
 
 Filament recommends developers create a custom theme to better support plugin's additional Tailwind classes. After you have created your custom theme, add the Filament Progress Bar vendor path to your `theme.css` file, usually located in `resources/css/filament/admin/theme.css`:
 

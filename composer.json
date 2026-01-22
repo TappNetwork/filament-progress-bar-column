@@ -28,7 +28,7 @@
     ],
     "require": {
         "php": "^8.3|^8.2",
-        "filament/tables": "^4.0|^3.0",
+        "filament/tables": "^5.0|^4.0|^3.0",
         "spatie/color": "^1.0",
         "spatie/laravel-package-tools": "^1.16"
     },
