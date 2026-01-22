@@ -2,6 +2,17 @@
 
 All notable changes to `filament-progress-column` will be documented in this file.
 
+## v1.0.3 - 2026-01-22
+
+### What's Changed
+
+* Bump actions/checkout from 4 to 6 by @dependabot[bot] in https://github.com/TappNetwork/filament-progress-bar-column/pull/7
+* Bump stefanzweifel/git-auto-commit-action from 5 to 7 by @dependabot[bot] in https://github.com/TappNetwork/filament-progress-bar-column/pull/4
+* Bump dependabot/fetch-metadata from 2.4.0 to 2.5.0 by @dependabot[bot] in https://github.com/TappNetwork/filament-progress-bar-column/pull/8
+* Add Filament 5 support by @andreia in https://github.com/TappNetwork/filament-progress-bar-column/pull/9
+
+**Full Changelog**: https://github.com/TappNetwork/filament-progress-bar-column/compare/v1.0.2...v1.0.3
+
 ## v1.0.2 - 2025-11-16
 
 ### What's Changed
