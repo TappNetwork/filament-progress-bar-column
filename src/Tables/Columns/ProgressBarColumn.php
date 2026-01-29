@@ -63,7 +63,9 @@ class ProgressBarColumn extends Column
 
     public function getLowThreshold(): ?int
     {
-        return $this->evaluate($this->lowThreshold);
+        return $this->evaluate($this->lowThreshold, [
+            'maxValue' => $this->getMaxValue(),
+        ]);
     }
 
     public function dangerColor(string | array | Closure $color): static
