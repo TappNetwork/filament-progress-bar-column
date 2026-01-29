@@ -143,6 +143,7 @@ class ProgressBarColumn extends Column
     {
         return $this->evaluate($this->dangerLabel, [
             'state' => $currentValue,
+            'maxValue' => $this->getMaxValue(),
         ]);
     }
 
@@ -157,6 +158,7 @@ class ProgressBarColumn extends Column
     {
         return $this->evaluate($this->warningLabel, [
             'state' => $currentValue,
+            'maxValue' => $this->getMaxValue(),
         ]);
     }
 
@@ -171,6 +173,7 @@ class ProgressBarColumn extends Column
     {
         return $this->evaluate($this->successLabel, [
             'state' => $currentValue,
+            'maxValue' => $this->getMaxValue(),
         ]);
     }
 
