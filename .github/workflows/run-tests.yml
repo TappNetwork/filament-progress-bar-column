@@ -46,6 +46,7 @@ jobs:
           echo "::add-matcher::${{ runner.tool_cache }}/phpunit.json"
 
       - name: Install dependencies
+        shell: bash
         run: |
           composer config audit.block-insecure false
           composer require "laravel/framework:${{ matrix.laravel }}" --no-interaction --no-update
