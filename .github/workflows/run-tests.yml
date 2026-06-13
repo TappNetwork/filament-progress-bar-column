@@ -47,6 +47,7 @@ jobs:
 
       - name: Install dependencies
         run: |
+          composer config audit.block-insecure false
           composer require "laravel/framework:${{ matrix.laravel }}" --no-interaction --no-update
           composer require "orchestra/testbench:${{ matrix.testbench }}" --dev --no-interaction --no-update
           composer require "pestphp/pest:${{ matrix.pest }}" --dev --no-interaction --no-update
@@ -58,4 +59,4 @@ jobs:
         run: composer show -D
 
       - name: Execute tests
-        run: vendor/bin/pest --ci
+        run: vendor/bin/pest --ci --no-coverage
